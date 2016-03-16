@@ -20,10 +20,10 @@ syn case ignore
 syn match zftxtLink "\(http\|https\|ftp\)\(\w\|[\-&=,?\:\.\/]\)*" contains=zftxtOperator
 syn case match
 
-syn match zftxtPreProc "\<[_A-Z]\+[_\-A-Z0-9]*\>"
+syn match zftxtPreProc "\<[_A-Z]\+[_\-A-Z0-9]\{2,}\>"
 
-syn match zftxtDelims "(.\+)"
-syn match zftxtDelims "\[.\+\]"
+syn match zftxtDelims "([^ \t]\+)"
+syn match zftxtDelims "\[[^ \t]\+\]"
 syn match zftxtDelims "{[^ \t]\+}"
 
 syn match zftxtTag "<[_a-zA-Z]\+[_a-zA-Z0-9]*>"
