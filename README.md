@@ -2,6 +2,7 @@
 
 vim script to highlight plain text files
 
+![screenshot](https://raw.githubusercontent.com/ZSaberLv0/ZFVimTxtHighlight/master/screenshot.png)
 
 # how to use
 
