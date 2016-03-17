@@ -2,6 +2,8 @@
 
 vim script to highlight plain text files
 
+here is a screenshot with [xterm16](https://github.com/vim-scripts/xterm16.vim) colorscheme
+
 ![screenshot](https://raw.githubusercontent.com/ZSaberLv0/ZFVimTxtHighlight/master/screenshot.png)
 
 # how to use
@@ -11,6 +13,7 @@ vim script to highlight plain text files
     ```
     Plugin 'ZSaberLv0/ZFVimTxtHighlight'
     ```
+
 1. by default, all `text` files or any other file that have no `filetype` specified,
     would be set to `zftxt` as `filetype`
 
