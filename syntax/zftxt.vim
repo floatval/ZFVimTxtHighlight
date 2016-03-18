@@ -66,6 +66,7 @@ syn match zftxtString "\".\{-}\""
 syn match zftxtString "\([^a-zA-Z0-9_]\|^\)\@<='.\{-}'"
 syn match zftxtString "`\+.\{-}`\+"
 
+syn match zftxtNumber "\(#\|\(0[xX]\)\{0,1}\)[a-fA-F0-9]\{6,8}"
 syn match zftxtNumber "\<\([xXa-fA-F\.:\-_]*[0-9]\+\)\+[xXa-fA-F\.:\-_]*\>"
 
 syn match zftxtVersion "\<\([a-zA-Z\.:\-_]*[0-9]\+\)\+[a-zA-Z\.:\-_]*\>"
