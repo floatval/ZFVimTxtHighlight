@@ -18,3 +18,7 @@ how to use
 
         let g:zf_txt_auto_highlight=0
 
+functions
+
+* ZF_VimTxtHighlightToggle() : toggle current file syntax
+

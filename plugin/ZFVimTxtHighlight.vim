@@ -5,7 +5,16 @@ if exists("g:zf_txt_auto_highlight") && g:zf_txt_auto_highlight != 1
     finish
 endif
 
-function! s:ZF_VimTxtHighlight()
+function! ZF_VimTxtHighlightToggle()
+    if &syntax=='zftxt'
+        let &filetype=&filetype
+    else
+        set syntax=zftxt
+    endif
+    echo &syntax
+endfunction
+
+function! s:ZF_VimTxtHighlightOn()
     if &filetype != '' && &filetype != 'text'
         return
     endif
@@ -13,8 +22,8 @@ function! s:ZF_VimTxtHighlight()
 endfunction
 
 augroup ZF_VimTxtHighlight_auto
-    call s:ZF_VimTxtHighlight()
+    call s:ZF_VimTxtHighlightOn()
     autocmd!
-    autocmd BufNewFile,BufReadPost * call s:ZF_VimTxtHighlight()
+    autocmd BufNewFile,BufReadPost * call s:ZF_VimTxtHighlightOn()
 augroup END
 
