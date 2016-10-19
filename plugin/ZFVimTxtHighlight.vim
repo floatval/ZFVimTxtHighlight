@@ -7,7 +7,7 @@ endif
 
 function! ZF_VimTxtHighlightToggle()
     if &syntax=='zftxt'
-        let &filetype=&filetype
+        let &syntax=&syntax
     else
         set syntax=zftxt
     endif
@@ -15,10 +15,10 @@ function! ZF_VimTxtHighlightToggle()
 endfunction
 
 function! s:ZF_VimTxtHighlightOn()
-    if &filetype != '' && &filetype != 'text'
+    if &syntax != '' && &syntax != 'text'
         return
     endif
-    set filetype=zftxt
+    set syntax=zftxt
 endfunction
 
 augroup ZF_VimTxtHighlight_auto
