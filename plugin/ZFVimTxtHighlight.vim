@@ -5,10 +5,12 @@ if exists("g:zf_txt_auto_highlight") && g:zf_txt_auto_highlight != 1
     finish
 endif
 
+let s:ZF_VimTxtHighlightToggleSaved=''
 function! ZF_VimTxtHighlightToggle()
     if &syntax=='zftxt'
-        let &syntax=&syntax
+        let &syntax=s:ZF_VimTxtHighlightToggleSaved
     else
+        let s:ZF_VimTxtHighlightToggleSaved=&syntax
         set syntax=zftxt
     endif
     echo &syntax
