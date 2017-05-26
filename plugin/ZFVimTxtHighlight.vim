@@ -1,9 +1,7 @@
 " ZFVimTxtHighlight.vim - vim script to highlight plain text files
 " Author:  ZSaberLv0 <http://zsaber.com/>
 
-if exists("g:zf_txt_auto_highlight") && g:zf_txt_auto_highlight != 1
-    finish
-endif
+let g:ZFVimTxtHighlight_loaded=1
 
 let s:ZF_VimTxtHighlightToggleSaved=''
 function! ZF_VimTxtHighlightToggle()
