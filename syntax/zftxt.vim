@@ -90,13 +90,17 @@ syn keyword zftxtMark todo fixme note warning
 syn case match
 
 syn case ignore
-syn keyword zftxtKeyword if else endif fi end
+syn keyword zftxtKeyword if else elseif elif endif fi end
+syn keyword zftxtKeyword switch case default
 syn keyword zftxtKeyword for endfor foreach for_each while endwhile until
-syn keyword zftxtKeyword function endfunction
-syn keyword zftxtKeyword let set var local
-syn keyword zftxtKeyword export import include require
+syn keyword zftxtKeyword function endfunction return
 syn keyword zftxtKeyword try catch finally
 syn keyword zftxtKeyword static const virtual final native
+syn keyword zftxtKeyword class struct public protected private friend
+syn keyword zftxtKeyword this self
+syn keyword zftxtKeyword void int char string long bool boolean float double
+syn keyword zftxtKeyword let set var local
+syn keyword zftxtKeyword export import include require
 syn keyword zftxtKeyword call command
 syn case match
 
