@@ -27,3 +27,10 @@ augroup ZF_VimTxtHighlight_auto
     autocmd BufNewFile,BufReadPost * call s:ZF_VimTxtHighlightOn()
 augroup END
 
+function! ZF_VimTxtHighlightEcho()
+    echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+                \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+                \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
+endfunction
+command! -nargs=0 ZFHIGHLIGHT :call ZF_VimTxtHighlightEcho()
+

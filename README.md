@@ -32,4 +32,5 @@ here is a screenshot with [xterm16](https://github.com/vim-scripts/xterm16.vim) 
 # functions
 
 * `ZF_VimTxtHighlightToggle()` : toggle current file syntax
+* `ZF_VimTxtHighlightEcho()` or `:ZFHIGHLIGHT` : echo the highlight info of the word under cursor
 
