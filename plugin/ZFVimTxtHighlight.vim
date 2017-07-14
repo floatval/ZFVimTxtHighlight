@@ -14,17 +14,33 @@ function! ZF_VimTxtHighlightToggle()
     echo &syntax
 endfunction
 
-function! s:ZF_VimTxtHighlightOn()
+function! s:autoApply()
+    if exists('g:zf_txt_auto_highlight') && g:zf_txt_auto_highlight==0
+        return
+    endif
+    if exists('g:zf_txt_large_file')
+        let largeFile = g:zf_txt_large_file
+    else
+        let largeFile = 5 * 1024 * 1024
+    endif
+    if largeFile > 0 && getfsize(expand("<afile>")) > largeFile
+        if &syntax == 'zftxt'
+            set syntax=
+        endif
+        return
+    endif
     if &syntax != '' && &syntax != 'text'
         return
     endif
+
+    let s:ZF_VimTxtHighlightToggleSaved=&syntax
     set syntax=zftxt
 endfunction
 
 augroup ZF_VimTxtHighlight_auto
-    call s:ZF_VimTxtHighlightOn()
+    call s:autoApply()
     autocmd!
-    autocmd BufNewFile,BufReadPost * call s:ZF_VimTxtHighlightOn()
+    autocmd BufNewFile,BufReadPost,BufWritePost * call s:autoApply()
 augroup END
 
 function! ZF_VimTxtHighlightEcho()

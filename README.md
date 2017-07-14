@@ -29,6 +29,13 @@ here is a screenshot with [xterm16](https://github.com/vim-scripts/xterm16.vim) 
     set syntax=zftxt
     ```
 
+1. by default, files that larger than 5MB would be ignored from highlight,
+    you may change this setting by
+
+    ```
+    let g:zf_txt_large_file=5*1024*1024
+    ```
+
 # functions
 
 * `ZF_VimTxtHighlightToggle()` : toggle current file syntax
